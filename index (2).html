@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferrari Luce — Should Ferrari Kill It?</title>
+  <meta name="description" content="Unofficial fan petition: should Ferrari retire the Luce? 1,113 hp · Full Electric · Designed by Jony Ive. Vote now.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.10.0/dist/tabler-icons.min.css">
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --color-background-primary: #fff;
+      --color-background-secondary: #f2f2f7;
+      --color-text-primary: #000;
+      --color-text-secondary: #6e6e73;
+      --color-border-tertiary: #e5e5ea;
+      --color-border-secondary: #d1d1d6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-background-primary: #1c1c1e;
+        --color-background-secondary: #2c2c2e;
+        --color-text-primary: #fff;
+        --color-text-secondary: #aeaeb2;
+        --color-border-tertiary: #38383a;
+        --color-border-secondary: #48484a;
+      }
+      .vbtn.keep { background: #e5e5ea !important; color: #111 !important; }
+      .dot[style*="111"] { background: #e5e5ea !important; }
+      .fill.k { background: #e5e5ea !important; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-background-secondary);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px 0 40px;
+      font-family: var(--font-sans);
+    }
+    .wrap { width: 100%; max-width: 390px; }
+    .hero { width: 100%; height: 210px; background: #0a0a0a; border-radius: 14px 14px 0 0; overflow: hidden; position: relative; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; }
+    .badge { position: absolute; top: 12px; left: 12px; background: #E8000D; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
+    .hero-info { position: absolute; bottom: 14px; left: 14px; }
+    .hero-info h1 { font-size: 26px; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -.01em; }
+    .hero-info h1 span { color: #E8000D; }
+    .hero-info p { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 3px; }
+    .body { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-top: none; border-radius: 0 0 14px 14px; padding: 20px 16px 16px; }
+    .question { font-size: 18px; font-weight: 600; color: var(--color-text-primary); text-align: center; line-height: 1.3; margin-bottom: 6px; }
+    .sub { font-size: 13px; color: var(--color-text-secondary); text-align: center; line-height: 1.55; margin-bottom: 20px; }
+    .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 8px; }
+    .vbtn { padding: 16px 8px 13px; border-radius: 12px; border: none; cursor: pointer; font-family: var(--font-sans); display: flex; flex-direction: column; align-items: center; gap: 3px; transition: transform .12s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    .vbtn:active { transform: scale(.96); }
+    .vbtn.retire { background: #E8000D; color: #fff; }
+    .vbtn.keep { background: #111; color: #fff; }
+    .vbtn i { font-size: 24px; }
+    .vbtn .lbl { font-size: 15px; font-weight: 600; }
+    .vbtn .sub2 { font-size: 11px; opacity: .75; margin-top: 1px; }
+    .vbtn.done { opacity: .45; cursor: default; }
+    .vmsg { display: none; text-align: center; font-size: 12px; color: var(--color-text-secondary); padding: 6px 0 2px; align-items: center; justify-content: center; gap: 5px; }
+    .vmsg i { font-size: 14px; color: #1D9E75; }
+    .divider { height: .5px; background: var(--color-border-tertiary); margin: 16px 0; }
+    .res-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .res-head span { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .07em; color: var(--color-text-secondary); }
+    .res-head strong { font-size: 12px; font-weight: 500; color: var(--color-text-primary); background: var(--color-background-secondary); padding: 3px 10px; border-radius: 20px; }
+    .bar-row { margin-bottom: 13px; }
+    .bar-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+    .bar-lbl { font-size: 13px; font-weight: 500; color: var(--color-text-primary); display: flex; align-items: center; gap: 6px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .bar-pct { font-size: 16px; font-weight: 600; color: var(--color-text-primary); }
+    .track { height: 9px; background: var(--color-background-secondary); border-radius: 5px; overflow: hidden; }
+    .fill { height: 100%; border-radius: 5px; transition: width .5s ease; }
+    .fill.r { background: #E8000D; }
+    .fill.k { background: #111; }
+    .bar-ct { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; text-align: right; }
+    .share-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+    .sbtn { padding: 11px 6px; border-radius: 10px; border: .5px solid var(--color-border-secondary); background: transparent; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: var(--font-sans); -webkit-tap-highlight-color: transparent; }
+    .sbtn:active { background: var(--color-background-secondary); }
+    .foot { text-align: center; font-size: 11px; color: var(--color-text-secondary); margin-top: 14px; letter-spacing: .05em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+<h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Ferrari Luce petition — should Ferrari retire the Luce?</h2>
+
+<div class="wrap">
+  <div class="hero">
+    <img src="assets/ferrari_luce.png" alt="Ferrari Luce">
+    <div class="badge"><i class="ti ti-flame" aria-hidden="true"></i> Hot debate</div>
+    <div class="hero-info">
+      <h1>FERRARI <span>LUCE</span></h1>
+      <p>1,113 hp · Full Electric · Designed by Jony Ive</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="question">Should Ferrari kill the Luce?</p>
+    <p class="sub">Stock dropped 8.4% after the reveal. Fans called it ugly and unworthy of the brand. But is it bold genius — or a disaster?</p>
+
+    <div class="btns">
+      <button class="vbtn retire" id="btn-r" onclick="vote('retire')">
+        <i class="ti ti-trash" aria-hidden="true"></i>
+        <span class="lbl">Retire it</span>
+        <span class="sub2">Kill the Luce</span>
+      </button>
+      <button class="vbtn keep" id="btn-k" onclick="vote('keep')">
+        <i class="ti ti-heart" aria-hidden="true"></i>
+        <span class="lbl">Keep it</span>
+        <span class="sub2">It's the future</span>
+      </button>
+    </div>
+
+    <div class="vmsg" id="vmsg">
+      <i class="ti ti-circle-check" aria-hidden="true"></i>
+      Your vote has been recorded — thanks!
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="res-head">
+      <span>Live results</span>
+      <strong id="total">2,072 votes</strong>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-top">
+        <span class="bar-lbl"><span class="dot" style="background:#E8000D"></span> Retire it</span>
+        <span class="bar-pct" id="pr">62%</span>
+      </div>
+      <div class="track"><div class="fill r" id="br" style="width:62%"></div></div>
+      <div class="bar-ct" id="cr">1,284 votes</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-top">
+        <span class="bar-lbl"><span class="dot" style="background:#111"></span> Keep it</span>
+        <span class="bar-pct" id="pk">38%</span>
+      </div>
+      <div class="track"><div class="fill k" id="bk" style="width:38%"></div></div>
+      <div class="bar-ct" id="ck">788 votes</div>
+    </div>
+
+    <div class="share-row">
+      <button class="sbtn" onclick="copyLink()"><i class="ti ti-share" style="font-size:15px" aria-hidden="true"></i> Share</button>
+      <button class="sbtn" onclick="tweetIt()"><i class="ti ti-brand-x" style="font-size:15px" aria-hidden="true"></i> Post on X</button>
+    </div>
+
+    <p class="foot">Unofficial fan petition · 2026</p>
+  </div>
+</div>
+
+<script>
+  let v = { retire: 1284, keep: 788 }, done = false;
+  function vote(c) {
+    if (done) return;
+    done = true;
+    v[c]++;
+    document.getElementById('btn-r').classList.add('done');
+    document.getElementById('btn-k').classList.add('done');
+    document.getElementById('btn-r').disabled = true;
+    document.getElementById('btn-k').disabled = true;
+    document.getElementById('vmsg').style.display = 'flex';
+    render();
+  }
+  function render() {
+    var t = v.retire + v.keep;
+    var pr = Math.round(v.retire / t * 100);
+    var pk = 100 - pr;
+    document.getElementById('total').textContent = t.toLocaleString() + ' votes';
+    document.getElementById('pr').textContent = pr + '%';
+    document.getElementById('pk').textContent = pk + '%';
+    document.getElementById('br').style.width = pr + '%';
+    document.getElementById('bk').style.width = pk + '%';
+    document.getElementById('cr').textContent = v.retire.toLocaleString() + ' votes';
+    document.getElementById('ck').textContent = v.keep.toLocaleString() + ' votes';
+  }
+  function copyLink() {
+    if (navigator.clipboard) navigator.clipboard.writeText(window.location.href).catch(function () {});
+    alert('Link copied!');
+  }
+  function tweetIt() {
+    var t = v.retire + v.keep;
+    var pr = Math.round(v.retire / t * 100);
+    window.open('https://twitter.com/intent/tweet?text=Should%20Ferrari%20kill%20the%20Luce%3F%20' + pr + '%25%20want%20it%20gone!%20%23Ferrari%20%23FerrariLuce');
+  }
+</script>
+
+</body>
+</html>
